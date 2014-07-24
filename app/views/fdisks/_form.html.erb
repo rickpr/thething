@@ -1,0 +1,21 @@
+<%= form_for(@fdisk) do |f| %>
+  <% if @fdisk.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fdisk.errors.count, "error") %> prohibited this fdisk from being saved:</h2>
+
+      <ul>
+      <% @fdisk.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :file %><br>
+    <%= f.file_field :file %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

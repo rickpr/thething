@@ -1,0 +1,25 @@
+<h1>Listing fdisks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fdisks.each do |fdisk| %>
+      <tr>
+        <td><%= fdisk.file %></td>
+        <td><%= link_to 'Show', fdisk %></td>
+        <td><%= link_to 'Edit', edit_fdisk_path(fdisk) %></td>
+        <td><%= link_to 'Destroy', fdisk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fdisk', new_fdisk_path %>
